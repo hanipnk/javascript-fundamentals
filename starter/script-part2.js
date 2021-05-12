@@ -582,27 +582,85 @@ while(dice !==6){
 
 //Coding Challenge #4
 
+// const bills = [22,295,176,440,37,105,10,1100,86,52];
+// const tips = [];
+// const totals = [];
+
+
+// //const calctip2 = bill=> bill>=50&& bill<=300 ? bill*0.15 : bill*0.2;  // solution
+
+// const calcTip = function(billvalue){
+//     if(billvalue>=50&&billvalue<=300)
+//         return billvalue*0.15
+//     else 
+//         return billvalue*0.2
+// };
+
+// console.log(calcTip(100));
+
+// for(let i=0; i<bills.length; i++){
+//     tips.push(calcTip(bills[i]))
+//     totals.push(tips[i]+bills[i])
+// }
+//   console.log(tips,totals)
+
+
 const bills = [22,295,176,440,37,105,10,1100,86,52];
-const tips = [];
-const totals = [];
-
-
-//const calctip2 = bill=> bill>=50&& bill<=300 ? bill*0.15 : bill*0.2;  // solution
-
-const calcTip = function(billvalue){
+const tips=[];
+const totals=[];
+const calcTip=function(billvalue){
     if(billvalue>=50&&billvalue<=300)
-        return billvalue*0.15
+    return billvalue*0.15
     else 
-        return billvalue*0.2
+    return billvalue*0.2
 };
 
-console.log(calcTip(100));
+console.log(calcTip(20))
 
-for(let i=0; i<bills.length; i++){
-    tips.push(calcTip(bills[i]))
-    totals.push(tips[i]+bills[i])
+// for(let i=0; i<bills.length; i++){
+//     tips.push(calcTip([bills[i]]))
+//     totals.push(tips[i]+bills[i])
+// }
+
+// console.log(tips,totals)
+
+//solution
+for(let i=0;i<bills.length; i++){
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip+bills[i]);
 }
-  console.log(tips,totals)
+console.log(bills,tips,totals)
+
+
+// const calcAverage = function(arr){
+//     let sum = 0;
+//     for(let i =0; i<arr.length;i++ ){
+//         // sum = sum + arr[i];
+//         sum+= arr[i];
+//     }
+//     return sum/arr.length;
+// }
+// console.log(calcAverage([2,3,6]));
+// console.log(calcAverage(totals));
+// console.log(calcAverage(tips));
+
+const calcaverage = function(arr){
+    let sum = 0
+    for(let i = 0;i<arr.length;i++){
+        sum=sum+arr[i]
+    }
+return sum/arr.length;
+}
+
+console.log(calcaverage(totals));
+console.log(calcaverage(tips));
+console.log(calcaverage([2,3,4,5]))
+
+
+
+
+
 
 
  
